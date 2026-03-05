@@ -1,0 +1,25 @@
+{% macro factoid(params) %}
+  <div class="factoid{% if params.class %} {{ params.class }}{% endif %}">
+    {% if params.value_before or params.value or params.value_after %}
+      <div class="factoid__value text-primary">
+        {{ params.value_before }}<span class="factoid__big-count">{{ params.value }}</span>{{ params.value_after }}
+      </div>
+    {% endif %}
+    {% if params.title %}
+      <div class="h5 factoid__title">
+        {{ params.title }}
+      </div>
+    {% endif %}
+    {% if params.descr %}
+      <div class="factoid__descr">
+        {% if params.descr is iterable and params.descr is not string %}
+          {% for line in params.descr %}
+            {{ line | safe }}
+          {% endfor %}
+        {% else %}
+          {{ params.descr | safe }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}

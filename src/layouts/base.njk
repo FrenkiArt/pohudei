@@ -1,49 +1,59 @@
- <!doctype html>
+<!doctype html>
 <html lang="ru" data-bs-theme="auto">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {# Блок для заголовка страницы. Можно переопределить в дочерних шаблонах #}
-    <title>{% block title %}{{ title | default(site_name) }}{% endblock %}</title>
+    <title>
+      {% block page_title %}{{ page_title | default(site_name) }}{% endblock %}
+    </title>
 
     {# Блок для мета-описания #}
-    <meta name="description" content="{% block description %}{{ description | default('') }}{% endblock %}">
+    <meta
+      name="description"
+      content="{% block description %}{{ description | default('') }}{% endblock %}"
+    />
 
-    {# Блок для дополнительных мета-тегов и ресурсов в head #}
+    {# Блок для дополнительных мета-тегов и ресурсов в head #} 
     {% block head %}
-        {# Кэширование #}
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta http-equiv="Expires" content="0">
+    
+    {# Кэширование #}
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-        {# Шрифты #}
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    {# Шрифты #}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Onest:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-        {# Фавикон и стили #}
-        <link rel="icon" type="image/svg+xml" href="assets/svg/vite.svg">
-        <link rel="stylesheet" href="assets/fonts/lato/stylesheet.css">
+    {# Фавикон и стили #}
+    <link rel="icon" type="image/svg+xml" href="assets/svg/vite.svg" />
     {% endblock %}
-</head>
-<body>
-   
-    {% include "components/header.njk" %}
-    {% include "components/sec-nav.njk" %}
-
+  </head>
+  <body>
+    {% include "components/header.njk" %} 
     {# Основной контент страницы — будет подставляться из дочерних шаблонов #}
     <main id="app" class="page">
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </main>
 
-    {% include "components/footer.njk" %}
-
-    {# Общая иконка и скрипт (можно оставить здесь) #}
+    {% include "components/end-page.njk" %} 
+    {% include "components/footer.njk" %} 
+    {# Общая иконка и скрипт (можно оставить здесь) #} 
+    {#
     <svg class="sprite-icon text-primary">
-        <use xlink:href="assets/svg/sprite.svg#geo"></use>
+      <use xlink:href="assets/svg/sprite.svg#geo"></use>
     </svg>
+    #}
 
     <script defer type="module" src="/src/main.js"></script>
-</body>
+  </body>
 </html>

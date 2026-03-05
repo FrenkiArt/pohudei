@@ -1,1 +1,36 @@
+@import 'rfs/scss';
 
+.header {
+  @include rfs(10px, padding-bottom);
+  @include rfs(8px, padding-top);
+  background-color: inherit;
+  font-size: 0.9375rem;
+  position: sticky;
+  top: 0;
+  z-index: 15;
+}
+
+.head-logo {
+  align-items: center;
+  display: flex;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  font-weight: 250;
+  letter-spacing: 0.06em;
+  line-height: 100%;
+  text-transform: uppercase;
+  height: 19px;
+}
+
+.head-menu {
+  .link-dark {
+    --bs-link-underline-opacity: 0;
+    opacity: 0.66;
+
+    &:hover,
+    &:focus-visible {
+      --bs-link-underline-opacity: 0;
+      opacity: 1;
+    }
+  }
+}

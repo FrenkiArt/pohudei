@@ -1,20 +1,20 @@
 // import IMask from 'imask';
 //import lightGallery from 'lightgallery';
 //import lgFullscreen from 'lightgallery/plugins/fullscreen';
-import { Modal } from 'bootstrap/js/dist/modal';
+//import { Modal } from 'bootstrap/js/dist/modal';
 //import Modal from 'bootstrap/js/dist/modal'
 
-import Swiper from 'swiper';
-import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
+//import Swiper from 'swiper';
+//import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 
-Swiper.use([Navigation, Pagination, EffectFade, Autoplay]);
+//Swiper.use([Navigation, Pagination, EffectFade, Autoplay]);
 
 // Инициализация при загрузке DOM-дерева
 document.addEventListener('DOMContentLoaded', () => {
   // initTelMasks();
   // initLightGalleries();
-  initTemplateSlider();
-  initTemplateSlider2();
+  //initTemplateSlider();
+  //initTemplateSlider2();
 });
 
 // Функция инициализации масок телефонных номеров
@@ -82,4 +82,4 @@ function initTemplateSlider2() {
 }
 
 // Экспорт модального окна для доступа извне
-window.modal = Modal;
+// window.modal = Modal;

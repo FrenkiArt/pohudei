@@ -1,33 +1,16 @@
 @use 'sass:color';
 
+/* Это на случай если понадобиться менять стили для не .link- */
 a:not([class^='link-']):not([class*=' link-']) {
-  //text-decoration-color: color-mix(in srgb, currentColor 33%, transparent);
-  //--bs-link-color-rgb
-  //--bs-link-hover-color-rgb
-  //text-decoration-color: rgba(#f96b23, 0.33);
-
   &:hover,
   &:focus-visible {
-    //text-decoration-color: color-mix(in srgb, currentColor 100%, transparent);
-    //color: #f96b23;
-    //text-decoration-color: rgba(#f96b23, 1);
   }
 }
 
 a {
   text-underline-offset: 0.25em;
-  text-decoration-color: rgba(#f96b23, 0.33);
-  transition:
-    color 0.2s ease-out,
-    background-color 0.2s ease-out,
-    border-color 0.2s ease-out,
-    text-underline-offset 0.2s ease-out;
-
-  &:hover,
-  &:focus-visible {
-    color: #f96b23;
-    text-decoration-color: rgba(#f96b23, 1);
-  }
+  transition: color 0.2s ease-out, background-color 0.2s ease-out,
+    border-color 0.2s ease-out, text-underline-offset 0.2s ease-out;
 }
 
 [class^='link-'],
@@ -37,6 +20,5 @@ a {
   &:hover,
   &:focus-visible {
     --bs-link-underline-opacity: 1;
-    //color: color-mix(in srgb, currentColor 100%, transparent);
   }
 }

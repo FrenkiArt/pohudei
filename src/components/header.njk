@@ -1,26 +1,24 @@
- <header id="header" class="header">
-    <div class="container">{{ site.site_name | default('Мой сайт') }}</div>
-
-     <nav>
-      <ul>
-        {% for item in site.menu %}
-        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-
-    <a href="tel:{{ site.phone }}">{{ site.phone }}</a>
-
-    <div class="div">
-        <svg class="sprite-icon">
-        {# ID иконки теперь формируется как "sprite-имя_файла_без_расширения" #}
-        <use xlink:href="/__spritemap#sprite-vite"></use>
-        </svg>
-        <svg class="sprite-icon text-primary"> 
-        <use xlink:href="/__spritemap#sprite-burger"></use>
-        </svg>
-        <svg class="sprite-icon"> 
-        <use xlink:href="/__spritemap#sprite-javascript"></use>
-        </svg>
+<header id="header" class="header">
+  <div class="container">
+    <div class="row gx-2 gx-sm-3 gy-1">
+      <div class="col-auto">
+        <div class="head-logo text-primary">
+          ПОХУДЕЙ
+        </div>
+      </div>
+      <div class="col d-none d-xs-block">
+        <div class="losung">
+          Тренажеры для&nbsp;здоровой жизни
+        </div>
+      </div>
+      <div class="col-12 col-sm-auto">
+        <nav class="hstack gap-2 gap-sm-2_5 head-menu">
+          <a href="#" class="link link-dark">Каталог</a>
+          <a href="#" class="link link-dark">О&nbsp;нас</a>
+          <a href="#" class="link link-dark">Доставка</a>
+          <a href="#" class="link link-dark">Контакты</a>
+        </nav>
+      </div>
     </div>
+  </div>
 </header>

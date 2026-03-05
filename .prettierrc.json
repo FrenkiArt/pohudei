@@ -1,4 +1,5 @@
 {
+  "plugins": ["prettier-plugin-twig-melody"],
   "trailingComma": "all",
   "tabWidth": 2,
   "semi": true,
@@ -6,11 +7,18 @@
   "printWidth": 80,
   "jsxSingleQuote": false,
   "bracketSpacing": true,
-  "jsxBracketSameLine": false,
-  "htmlWhitespaceSensitivity": "css",
+  "bracketSameLine": false,
+  "htmlWhitespaceSensitivity": "ignore",
   "endOfLine": "auto",
   "embeddedLanguageFormatting": "auto",
   "quoteProps": "as-needed",
   "arrowParens": "always",
-  "proseWrap": "preserve"
+  "proseWrap": "preserve",
+  "singleAttributePerLine": true,
+  "overrides": [
+    {
+      "files": ["*.njk"],
+      "options": { "parser": "melody", "twigMelodyPreserveWhitespace": false }
+    }
+  ]
 }

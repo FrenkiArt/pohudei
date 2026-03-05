@@ -1,8 +1,6 @@
-.uni-sec {
-  padding-top: rfs-fluid-value(64px);
-  padding-bottom: rfs-fluid-value(64px);
+@import 'rfs/scss';
 
-  /* &:nth-of-type(odd) {
-    background-color: #ffffff;
-  } */
+.uni-sec {
+  @include rfs(32px, padding-top);
+  @include rfs(54px, padding-bottom);
 }
